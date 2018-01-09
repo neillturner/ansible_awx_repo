@@ -1,0 +1,27 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: ansible_playbook
+  require_ansible_omnibus: true
+  ansible_omnibus_url: https://raw.githubusercontent.com/neillturner/omnibus-ansible/master/install_awx.sh
+  require_chef_for_busser: false
+  hosts: localhost
+
+platforms:
+  - name: centos7
+    driver_plugin: vagrant
+    driver_config:
+      box: centos/7
+      vm_hostname: 'awx.local'
+      customize:
+        memory: 4048
+        cpus: 2
+        natdnshostresolver1: 'on'
+        ioapic: 'on'
+      network:
+      - ['forwarded_port', {guest: 80, host: 8080}]
+
+suites:
+  - name: ansible
