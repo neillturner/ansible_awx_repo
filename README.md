@@ -5,4 +5,4 @@ Installs Ansible AWX from the [omnibus-ansible repository](https://github.com/ne
 
 ## Links
 
-[Ansible AWX](https://media-glass.es/ansible-awx-cdb395fb70c7}
+[Ansible AWX](https://media-glass.es/ansible-awx-cdb395fb70c7)
